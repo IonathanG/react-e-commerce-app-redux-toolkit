@@ -1,0 +1,103 @@
+.nav {
+  //background-color: rgba(0, 255, 255, 0.248);
+  width: 80%;
+  min-height: 50px;
+  margin: 25px auto 0 auto;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    background-color: $grayishBlue;
+    top: 75px;
+    opacity: 0.8;
+  }
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  &__container--left {
+    display: flex;
+    flex-direction: row;
+    gap: 45px;
+    //background-color: antiquewhite;
+
+    .logo {
+      transition: 0.3s ease;
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+
+    .list-links {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+
+      li {
+        list-style: none;
+        opacity: 0.8;
+        transition: 0.3s ease;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  &__container--right {
+    display: flex;
+    align-items: center;
+    gap: 45px;
+    //background-color: antiquewhite;
+
+    .icon-cart,
+    .icon-profil,
+    .icon-logout {
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+
+    .icon-cart {
+      width: 26px;
+      height: 24px;
+      cursor: pointer;
+      transition: 0.3s ease;
+    }
+    .profil {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      //background-color: rgba(0, 255, 255, 0.281);
+
+      .icon-profil {
+        max-width: 40px;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+
+      .icon-logout {
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+        transition: 0.3s ease;
+      }
+    }
+
+    .login-logout {
+      opacity: 0.8;
+      transition: 0.3s ease;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+}

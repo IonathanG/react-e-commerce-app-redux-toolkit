@@ -1,0 +1,61 @@
+//----- FONTS -----
+$mainFont: "Kumbh Sans"; //400, 700
+
+//----- COLORS -----
+$mainOrange: hsl(26, 100%, 55%);
+$paleOrange: hsl(25, 100%, 94%);
+$veryDarkBlue: hsl(220, 13%, 13%);
+$darkGrayishBlue: hsl(219, 9%, 45%);
+$grayishBlue: hsl(220, 14%, 75%);
+$lightGrayishBlue: hsl(223, 64%, 98%);
+$mainWhite: hsl(0, 0%, 100%);
+$blackOpacity: hsl(0, 0%, 0%); //(with 75% opacity for lightbox background)
+
+//----- SCREEN SIZES -----
+$tablet: 1000px;
+$phone: 700px;
+
+//----- MIXINS -----
+// @mixin headingStyle_1($size) {
+//   font-size: $size;
+// }
+
+//----- FLEX CENTER -----
+@mixin verticalCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+//----- IMAGES -----
+
+//----- GENERAL SETTINGS -----
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  font-family: $mainFont, sans-serif;
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: $darkGrayishBlue;
+}
