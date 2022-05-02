@@ -10,27 +10,30 @@ import Checkout from "./pages/Checkout";
 import Nav from "./components/Nav";
 import ConnectModal from "./pages/ConnectModal";
 import { UserProvider } from "./context/UserContext";
+import { CartProvider } from "./context/CartContext";
 
 function App() {
   return (
     <div className="App">
       <UserProvider>
-        <BrowserRouter>
-          <Nav />
-          <div className="main">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/collections" element={<Collections />} />
-              <Route path="/men" element={<Men />} />
-              <Route path="/women" element={<Women />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/checkout" element={<Checkout />} />
-              <Route path="/connect" element={<ConnectModal />} />
-              <Route path="*" element={<Home />} />
-            </Routes>
-          </div>
-        </BrowserRouter>
+        <CartProvider>
+          <BrowserRouter>
+            <Nav />
+            <div className="main">
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/collections" element={<Collections />} />
+                <Route path="/men" element={<Men />} />
+                <Route path="/women" element={<Women />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/contact" element={<Contact />} />
+                <Route path="/checkout" element={<Checkout />} />
+                <Route path="/connect" element={<ConnectModal />} />
+                <Route path="*" element={<Home />} />
+              </Routes>
+            </div>
+          </BrowserRouter>
+        </CartProvider>
       </UserProvider>
     </div>
   );

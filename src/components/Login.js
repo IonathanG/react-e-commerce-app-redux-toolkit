@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { auth } from "../utils/firebase.config";
 import { signInWithEmailAndPassword } from "firebase/auth";
 
@@ -6,6 +7,7 @@ const Login = () => {
   const loginEmail = useRef();
   const loginPassword = useRef();
   const [error, setError] = useState(false);
+  const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -17,6 +19,7 @@ const Login = () => {
         loginPassword.current.value
       );
       console.log(user);
+      navigate("/");
     } catch (error) {
       console.log(error.message);
       setError(true);

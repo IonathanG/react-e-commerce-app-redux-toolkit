@@ -1,0 +1,49 @@
+import { createContext, useState } from "react";
+
+const CartContext = createContext();
+
+export function CartProvider({ children }) {
+  const [listItems, setListItems] = useState([]);
+  const [totalQuantity, setTotalQuantity] = useState(0);
+
+  //add item to the cart or add quantity of an item already in the cart
+  const addItem = (name, quantity, price) => {
+    let itemFound = false;
+
+    if (quantity > 0) {
+      setTotalQuantity((prevState) => prevState + quantity);
+
+      for (let i = 0; i < listItems.length; i++) {
+        if (listItems[i].name === name) {
+          listItems[i].quantity += quantity;
+          itemFound = true;
+        }
+      }
+      if (!itemFound)
+        setListItems((prevState) => [...prevState, { name, quantity, price }]);
+    }
+  };
+
+  //remove an item from the cart
+  const removeItem = (name) => {
+    if (listItems.length > 0) {
+      let newArray = [];
+
+      for (let i = 0; i < listItems.length; i++) {
+        if (listItems[i].name !== name) newArray.push(listItems[i]);
+        else setTotalQuantity((prevState) => prevState - listItems[i].quantity);
+      }
+      setListItems(newArray);
+    }
+  };
+
+  return (
+    <CartContext.Provider
+      value={{ listItems, totalQuantity, addItem, removeItem }}
+    >
+      {children}
+    </CartContext.Provider>
+  );
+}
+
+export default CartContext;
