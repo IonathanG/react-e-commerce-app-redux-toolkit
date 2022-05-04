@@ -54,20 +54,24 @@ const Product = () => {
   return (
     <div className="product">
       <div className="product__images">
-        <div className="next-previous__small previous__small">
+        <div
+          className="next-previous__small previous__small"
+          onClick={() => handlePrevious()}
+        >
           <img
             src="/images/icon-previous.svg"
             alt="button_previous"
             className="btn-previous"
-            onClick={() => handlePrevious()}
           />
         </div>
-        <div className="next-previous__small next__small">
+        <div
+          className="next-previous__small next__small"
+          onClick={() => handleNext()}
+        >
           <img
             src="/images/icon-next.svg"
             alt="button_previous"
             className="btn-next"
-            onClick={() => handleNext()}
           />
         </div>
         <img
@@ -93,7 +97,7 @@ const Product = () => {
         {productPopup && (
           <ProductPopUp
             images={product_images}
-            popupStatus={setProductPopup}
+            setProductPopup={setProductPopup}
             imageDisplayed={imageIndex}
           />
         )}

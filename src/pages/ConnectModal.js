@@ -8,8 +8,18 @@ const ConnectModal = () => {
   return (
     <div className="connect-modal">
       <div className="header-btn">
-        <button onClick={() => setSignUp(true)}>Sign-Up</button>
-        <button onClick={() => setSignUp(false)}>Log-In</button>
+        <button
+          className={signUp ? "btn-active" : ""}
+          onClick={() => setSignUp(true)}
+        >
+          Sign-Up
+        </button>
+        <button
+          className={!signUp ? "btn-active" : ""}
+          onClick={() => setSignUp(false)}
+        >
+          Log-In
+        </button>
       </div>
       {signUp ? <SignUp /> : <Login />}
     </div>

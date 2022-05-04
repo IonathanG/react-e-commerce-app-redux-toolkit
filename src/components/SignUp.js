@@ -34,7 +34,7 @@ const SignUp = () => {
         <form onSubmit={(e) => handleRegister(e)}>
           <input
             type="text"
-            placeholder="Pseudo"
+            placeholder="Name"
             onChange={(e) => setDisplayName(e.target.value)}
             required
           />

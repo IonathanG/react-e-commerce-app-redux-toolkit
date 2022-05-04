@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const ProductPopUp = ({ images, popupStatus, imageDisplayed }) => {
+const ProductPopUp = ({ images, setProductPopup, imageDisplayed }) => {
   const [imageIndex, setImageIndex] = useState(imageDisplayed);
 
   const handlePrevious = () => {
@@ -61,10 +61,10 @@ const ProductPopUp = ({ images, popupStatus, imageDisplayed }) => {
           src="/images/icon-close.svg"
           alt=""
           className="close-btn"
-          onClick={() => popupStatus(false)}
+          onClick={() => setProductPopup(false)}
         />
       </div>
-      <div className="popup-dim"></div>
+      <div className="popup-dim" onClick={() => setProductPopup(false)}></div>
     </>
   );
 };

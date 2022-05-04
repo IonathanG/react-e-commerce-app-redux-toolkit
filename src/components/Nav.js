@@ -123,7 +123,7 @@ const Nav = () => {
               to="/connect"
               className={(nav) => (nav.isActive ? "nav-active" : "")}
             >
-              <p className="login-logout">Log in/Sign up</p>
+              <p className="login-logout">Login/Sign up</p>
             </NavLink>
           )}
         </div>

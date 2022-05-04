@@ -37,9 +37,35 @@ export function CartProvider({ children }) {
     }
   };
 
+  const addQuantity = (name) => {
+    for (let i = 0; i < listItems.length; i++) {
+      if (listItems[i].name === name) {
+        listItems[i].quantity += 1;
+        setTotalQuantity((prevState) => prevState + 1);
+      }
+    }
+  };
+
+  const removeQuantity = (name) => {
+    for (let i = 0; i < listItems.length; i++) {
+      if (listItems[i].name === name) {
+        if (listItems[i].quantity > 1) listItems[i].quantity -= 1;
+        else removeItem(name);
+        setTotalQuantity((prevState) => prevState - 1);
+      }
+    }
+  };
+
   return (
     <CartContext.Provider
-      value={{ listItems, totalQuantity, addItem, removeItem }}
+      value={{
+        listItems,
+        totalQuantity,
+        addItem,
+        removeItem,
+        addQuantity,
+        removeQuantity,
+      }}
     >
       {children}
     </CartContext.Provider>

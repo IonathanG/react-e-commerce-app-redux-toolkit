@@ -38,7 +38,7 @@
     .hamburger-container {
       display: none;
       cursor: pointer;
-      z-index: 30;
+      z-index: 250;
       transition: 0.25s ease-in;
 
       @media (max-width: $phone) {
@@ -53,6 +53,7 @@
     }
 
     .hamburger-active {
+      position: fixed;
       width: 14px;
       height: 15px;
       background-image: url(../../../public/images/icon-close.svg);
@@ -79,7 +80,7 @@
         width: 55vw;
         max-width: 300px;
         transition: 0.5s ease-in-out;
-        z-index: 20;
+        z-index: 200;
       }
 
       .list-links {
@@ -278,6 +279,6 @@
     background: rgba(0, 0, 0, 0.65);
     left: 0;
     top: 0;
-    z-index: 10;
+    z-index: 100;
   }
 }

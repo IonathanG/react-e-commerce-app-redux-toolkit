@@ -1,0 +1,130 @@
+.checkout {
+  //background-color: rgba(127, 255, 212, 0.193);
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  &__empty {
+    font-weight: 700;
+    font-size: 20px;
+    opacity: 0.8;
+    color: $veryDarkBlue;
+  }
+
+  &__list {
+    &__item {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+        rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+      &--img {
+        border-radius: 5px;
+      }
+
+      &--details {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 5px 0;
+        //gap: 5px;
+        letter-spacing: 0.5px;
+        font-size: 16px;
+
+        .item-name {
+          font-size: 20px;
+          font-weight: 700;
+        }
+
+        .item-price {
+          font-size: 17px;
+          font-weight: 300;
+          margin: -5px 0 15px 0;
+        }
+
+        .item-quantity {
+          //margin-top: 10px;
+          background-color: $lightGrayishBlue;
+          border-radius: 5px;
+          height: 30px;
+          max-width: 100px;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+
+          img {
+            cursor: pointer;
+            padding: 5px;
+            transition: 0.4s ease;
+
+            &:hover {
+              opacity: 0.65;
+              transform: scale(1.1);
+            }
+          }
+          p {
+            color: $blackOpacity;
+            font-weight: 700;
+            font-size: 15px;
+          }
+        }
+
+        .item-totalPrice {
+          span {
+            font-weight: 700;
+          }
+        }
+      }
+      .item__delete {
+        position: absolute;
+        cursor: pointer;
+        transition: 0.3s ease;
+        top: 10px;
+        right: 10px;
+
+        &:hover {
+          transform: scale(1.2);
+        }
+      }
+    }
+
+    .final-checkout {
+      width: 100%;
+      margin-top: 35px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 15px;
+      letter-spacing: 0.5px;
+
+      .total-checkout {
+        span {
+          font-weight: 700;
+        }
+      }
+
+      button {
+        background-color: $mainOrange;
+        color: $mainWhite;
+        width: 200px;
+        height: 45px;
+        border: none;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 700;
+        letter-spacing: 1px;
+        cursor: pointer;
+        transition: 0.4s ease;
+
+        &:hover {
+          opacity: 0.65;
+          transform: scale(1.02);
+        }
+      }
+    }
+  }
+}
