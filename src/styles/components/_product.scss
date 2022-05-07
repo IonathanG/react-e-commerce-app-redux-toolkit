@@ -45,8 +45,7 @@
       &:hover {
         .btn-previous,
         .btn-next {
-          filter: invert(47%) sepia(86%) saturate(658%) hue-rotate(344deg)
-            brightness(105%) contrast(106%);
+          @include orange-filter-svg;
         }
       }
     }

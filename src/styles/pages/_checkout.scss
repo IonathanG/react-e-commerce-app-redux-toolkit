@@ -1,5 +1,6 @@
 .checkout {
   //background-color: rgba(127, 255, 212, 0.193);
+  position: relative;
   width: 80%;
   margin: 0 auto;
   display: flex;
@@ -14,6 +15,7 @@
   }
 
   &__list {
+    transition: 0.3s ease;
     &__item {
       position: relative;
       display: flex;
@@ -21,9 +23,20 @@
       gap: 30px;
       box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
         rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+      transition: 0.3s ease;
+
+      @media (max-width: 700px) {
+        //flex-direction: column;
+        //align-items: center;
+      }
 
       &--img {
         border-radius: 5px;
+
+        @media (max-width: 700px) {
+          // max-width: 220px;
+          //margin: 0 auto;
+        }
       }
 
       &--details {
@@ -38,12 +51,19 @@
         .item-name {
           font-size: 20px;
           font-weight: 700;
+          @media (max-width: 700px) {
+            padding-right: 10px;
+            font-size: 18px;
+          }
         }
 
         .item-price {
           font-size: 17px;
           font-weight: 300;
           margin: -5px 0 15px 0;
+          @media (max-width: 700px) {
+            font-size: 16px;
+          }
         }
 
         .item-quantity {
@@ -89,6 +109,40 @@
         &:hover {
           transform: scale(1.2);
         }
+
+        @media (max-width: 700px) {
+          display: none;
+        }
+      }
+      .item__delete__small {
+        position: absolute;
+        cursor: pointer;
+        transition: 0.3s ease;
+        top: -10px;
+        right: -5px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: $lightGrayishBlue;
+        display: grid;
+        place-items: center;
+        transform: rotate(1deg);
+
+        &:hover {
+          transform: scale(1.2);
+          .delete-btn {
+            @include orange-filter-svg;
+          }
+        }
+
+        @media (min-width: 700px) {
+          display: none;
+        }
+
+        .delete-btn {
+          width: 11px;
+          height: 11px;
+        }
       }
     }
 
@@ -108,17 +162,11 @@
       }
 
       button {
-        background-color: $mainOrange;
-        color: $mainWhite;
-        width: 200px;
-        height: 45px;
-        border: none;
-        border-radius: 10px;
+        @include generic-button(210px, 50px);
         font-size: 15px;
-        font-weight: 700;
-        letter-spacing: 1px;
-        cursor: pointer;
-        transition: 0.4s ease;
+        line-height: 20px;
+        box-shadow: rgba(235, 102, 7, 0.341) 0px 20px 25px -5px,
+          rgba(177, 103, 6, 0.462) 0px 10px 10px -5px;
 
         &:hover {
           opacity: 0.65;
@@ -127,4 +175,70 @@
       }
     }
   }
+
+  &__confirm-checkout {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -45%);
+    max-width: 400px;
+    height: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: $mainWhite;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    z-index: 30;
+
+    p {
+      line-height: 30px;
+      letter-spacing: 0.5px;
+      display: inline-block;
+    }
+
+    img {
+      max-width: 40px;
+    }
+
+    button {
+      @include generic-button(140px, 45px);
+      &:hover {
+        opacity: 0.65;
+        transform: scale(1.02);
+      }
+    }
+    .close__checkout {
+      position: absolute;
+      cursor: pointer;
+      transition: 0.3s ease;
+      top: -8px;
+      right: -5px;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      border: 1px solid $darkGrayishBlue;
+      background-color: $lightGrayishBlue;
+      display: grid;
+      place-items: center;
+      transform: rotate(1deg);
+
+      &:hover {
+        .close-btn {
+          @include orange-filter-svg;
+        }
+      }
+
+      .close-btn {
+        width: 11px;
+        height: 11px;
+      }
+    }
+  }
+}
+
+.checkout-dim {
+  @include dim-background(0.8);
+  z-index: 20;
 }

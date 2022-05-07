@@ -27,6 +27,52 @@ $phone: 920px;
   justify-content: center;
 }
 
+//----- DIM BACKGROUND -----
+@mixin dim-background($opacity) {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, $opacity);
+  left: 0;
+  top: 0;
+}
+
+//----- BUTTON MULTI-FUNCTION -----
+@mixin generic-button($width, $height) {
+  background-color: $mainOrange;
+  color: $mainWhite;
+  width: $width;
+  height: $height;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: 0.4s ease;
+}
+
+//----- UNDERLINE HOVER -----
+@mixin underline-hover {
+  background: none repeat scroll 0 0 transparent;
+  bottom: -40px;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: $mainOrange;
+  opacity: 0.9;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+
+//----- FILTER SVG -----
+@mixin orange-filter-svg {
+  filter: invert(47%) sepia(86%) saturate(658%) hue-rotate(344deg)
+    brightness(105%) contrast(106%);
+}
+
 //----- IMAGES -----
 
 //----- GENERAL SETTINGS -----

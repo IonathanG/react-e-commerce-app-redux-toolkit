@@ -6,7 +6,7 @@ import CartPopUp from "./CartPopUp";
 
 const Nav = () => {
   const { user, handleLogout } = useContext(UserContext);
-  const { totalQuantity, removeItem } = useContext(CartContext);
+  const { totalQuantity } = useContext(CartContext);
 
   const [isActive, setActive] = useState(true);
   const btnRef = useRef();

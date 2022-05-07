@@ -33,6 +33,11 @@ const Product = () => {
   const [productPopup, setProductPopup] = useState(false);
   const { addItem } = useContext(CartContext);
 
+  let formatter = new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: "USD",
+  });
+
   const addQuantity = () => {
     setItemQuantity((prevState) => prevState + 1);
   };
@@ -115,7 +120,7 @@ const Product = () => {
 
         <section className="price-section">
           <div className="price-container">
-            <div className="price-tag">{"$" + product_price}.00</div>
+            <div className="price-tag">{formatter.format(product_price)}</div>
             <div className="discount-tag">50%</div>
           </div>
           <div className="old-price">$250</div>
