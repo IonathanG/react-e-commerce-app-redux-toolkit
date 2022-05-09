@@ -4,8 +4,14 @@ import CartContext from "../context/CartContext";
 import UserContext from "../context/UserContext";
 
 const Checkout = () => {
-  const { listItems, totalQuantity, addQuantity, removeQuantity, removeItem } =
-    useContext(CartContext);
+  const {
+    listItems,
+    totalQuantity,
+    addQuantity,
+    removeQuantity,
+    removeItem,
+    deleteCart,
+  } = useContext(CartContext);
   const { user } = useContext(UserContext);
 
   const [totalPrice, setTotalPrice] = useState(0);
@@ -87,7 +93,10 @@ const Checkout = () => {
             {user ? (
               <button
                 className="btn-finalCheckout"
-                onClick={() => setIsCheckedOut(true)}
+                onClick={() => {
+                  setIsCheckedOut(true);
+                  deleteCart();
+                }}
               >
                 Proceed to checkout
               </button>

@@ -79,6 +79,10 @@ export function CartProvider({ children }) {
     }
   };
 
+  const deleteCart = () => {
+    setListItems([]);
+  };
+
   return (
     <CartContext.Provider
       value={{
@@ -88,6 +92,7 @@ export function CartProvider({ children }) {
         removeItem,
         addQuantity,
         removeQuantity,
+        deleteCart,
       }}
     >
       {children}

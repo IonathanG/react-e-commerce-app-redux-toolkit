@@ -26,16 +26,17 @@
       transition: 0.3s ease;
 
       @media (max-width: 700px) {
-        //flex-direction: column;
-        //align-items: center;
+        gap: 10px;
       }
 
       &--img {
         border-radius: 5px;
+        max-width: 100%;
+        transition: 0.3s ease;
 
         @media (max-width: 700px) {
-          // max-width: 220px;
-          //margin: 0 auto;
+          max-width: 150px;
+          height: 100%;
         }
       }
 
@@ -43,17 +44,22 @@
         display: flex;
         flex-direction: column;
         justify-content: space-around;
-        padding: 5px 0;
-        //gap: 5px;
+        gap: 5px 0;
         letter-spacing: 0.5px;
         font-size: 16px;
 
         .item-name {
           font-size: 20px;
           font-weight: 700;
+
           @media (max-width: 700px) {
             padding-right: 10px;
             font-size: 18px;
+          }
+
+          @media (max-width: 600px) {
+            padding-right: 5px;
+            font-size: 15px;
           }
         }
 
@@ -62,7 +68,11 @@
           font-weight: 300;
           margin: -5px 0 15px 0;
           @media (max-width: 700px) {
-            font-size: 16px;
+            font-size: 15px;
+          }
+
+          @media (max-width: 600px) {
+            font-size: 14px;
           }
         }
 
@@ -90,10 +100,18 @@
             color: $blackOpacity;
             font-weight: 700;
             font-size: 15px;
+
+            @media (max-width: 700px) {
+              font-size: 13px;
+            }
           }
         }
 
         .item-totalPrice {
+          @media (max-width: 700px) {
+            font-size: 14px;
+            padding-top: 10px;
+          }
           span {
             font-weight: 700;
           }
