@@ -181,13 +181,13 @@
         right: -2px;
       }
     }
-    .profil {
+    .profile {
       display: flex;
       align-items: center;
       gap: 1rem;
       //background-color: rgba(0, 255, 255, 0.281);
 
-      .icon-profil {
+      .icon-profile {
         width: 40px;
         cursor: pointer;
         transition: 0.3s ease;
@@ -198,6 +198,9 @@
         }
       }
 
+      .profile-active {
+        box-shadow: 0 0 0 2px $mainOrange;
+      }
       .icon-logout {
         width: 20px;
         height: 20px;

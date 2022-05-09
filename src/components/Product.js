@@ -1,32 +1,17 @@
 import React, { useState, useContext } from "react";
 import CartContext from "../context/CartContext";
 import ProductPopUp from "./ProductPopUp";
+import Product_Data from "../data.json";
 
 const Product = () => {
-  const product_name = "Fall Limited Edition Sneakers";
-  const product_price = 125;
-  const product_images = [
-    {
-      full: "/images/image-product-1.jpg",
-      miniature: "/images/image-product-1-thumbnail.jpg",
-      id: 0,
-    },
-    {
-      full: "/images/image-product-2.jpg",
-      miniature: "/images/image-product-2-thumbnail.jpg",
-      id: 1,
-    },
-    {
-      full: "/images/image-product-3.jpg",
-      miniature: "/images/image-product-3-thumbnail.jpg",
-      id: 2,
-    },
-    {
-      full: "/images/image-product-4.jpg",
-      miniature: "/images/image-product-4-thumbnail.jpg",
-      id: 3,
-    },
-  ];
+  const {
+    name: product_name,
+    price: product_price,
+    original_price,
+    images: product_images,
+    description: product_description,
+    discount: product_discount,
+  } = Product_Data.products[0];
 
   const [itemQuantity, setItemQuantity] = useState(0);
   const [imageIndex, setImageIndex] = useState(0);
@@ -112,18 +97,14 @@ const Product = () => {
           <div className="company-title">Sneaker Company</div>
           <div className="product-title">{product_name}</div>
         </header>
-        <p>
-          These low-profile sneakers are your perfect casual wear companion.
-          Featuring a durable rubber outer sole, they'll withstand everything
-          the weather can offer.
-        </p>
+        <p>{product_description}</p>
 
         <section className="price-section">
           <div className="price-container">
             <div className="price-tag">{formatter.format(product_price)}</div>
-            <div className="discount-tag">50%</div>
+            <div className="discount-tag">{product_discount}</div>
           </div>
-          <div className="old-price">$250</div>
+          <div className="old-price">{"$" + original_price}</div>
         </section>
 
         <section className="shop__item">

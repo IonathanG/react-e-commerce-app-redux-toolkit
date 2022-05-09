@@ -3,15 +3,21 @@ import { NavLink } from "react-router-dom";
 import UserContext from "../context/UserContext";
 import CartContext from "../context/CartContext";
 import CartPopUp from "./CartPopUp";
+import ProfilePopUp from "./ProfilePopUp";
 
 const Nav = () => {
-  const { user, handleLogout } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const { totalQuantity } = useContext(CartContext);
 
   const [isActive, setActive] = useState(true);
+  const [isProfileActive, setIsProfileActive] = useState(false);
   const btnRef = useRef();
   const menuRef = useRef();
   const subMenuRef = useRef();
+
+  const profileRef = useRef();
+  const profileContainerRef = useRef();
+  const profilePictureRef = useRef();
 
   const handleToggle = () => {
     setActive((prevState) => !prevState);
@@ -21,14 +27,22 @@ const Nav = () => {
   useEffect(() => {
     const closeMenu = (e) => {
       if (
-        e.path[0] !== btnRef.current &&
-        e.path[0] !== menuRef.current &&
-        e.path[0] !== subMenuRef.current
+        !btnRef.current.contains(e.target) &&
+        !menuRef.current.contains(e.target)
       )
         setActive(true);
     };
     document.body.addEventListener("click", closeMenu);
     return () => document.body.removeEventListener("click", closeMenu);
+  }, []);
+
+  //close profile popup if click outside
+  useEffect(() => {
+    const closeProfile = (e) => {
+      if (!profileRef.current.contains(e.target)) setIsProfileActive(false);
+    };
+    document.body.addEventListener("click", closeProfile);
+    return () => document.body.removeEventListener("click", closeProfile);
   }, []);
 
   return (
@@ -105,18 +119,21 @@ const Nav = () => {
           </div>
 
           {user ? (
-            <div className="profil">
-              <img
-                className="icon-profil"
-                src="/images/image-avatar.png"
-                alt=""
-              />
-              <img
-                onClick={() => handleLogout()}
-                className="icon-logout"
-                src="/images/logout.svg"
-                alt=""
-              />
+            <div className="profile" ref={profileRef}>
+              <div className="profile__container" ref={profileContainerRef}>
+                <img
+                  className={`icon-profile ${
+                    isProfileActive ? "profile-active" : ""
+                  }`}
+                  src="/images/image-avatar.png"
+                  alt="profile_picture"
+                  onClick={() => setIsProfileActive((prevState) => !prevState)}
+                  ref={profilePictureRef}
+                />
+                {isProfileActive && (
+                  <ProfilePopUp setIsProfileActive={setIsProfileActive} />
+                )}
+              </div>
             </div>
           ) : (
             <NavLink

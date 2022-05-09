@@ -7,10 +7,13 @@ const Login = () => {
   const loginEmail = useRef();
   const loginPassword = useRef();
   const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    setError(false);
+    setLoading(true);
 
     try {
       const user = await signInWithEmailAndPassword(
@@ -23,6 +26,7 @@ const Login = () => {
     } catch (error) {
       console.log(error.message);
       setError(true);
+      setLoading(false);
     }
     console.log(loginEmail.current.value, loginPassword.current.value);
   };
@@ -41,6 +45,7 @@ const Login = () => {
           />
           <input type="submit" value="Login" />
           <span>{error && "Invalid email or password"}</span>
+          <span>{loading && "Login..."}</span>
         </form>
       </div>
     </div>

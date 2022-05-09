@@ -1,13 +1,19 @@
 import React, { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { auth } from "../utils/firebase.config";
 
 const SignUp = () => {
   const registerEmail = useRef();
   const registerPassword = useRef();
   const [displayName, setDisplayName] = useState("");
+  const [error, setError] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
   const handleRegister = (e) => {
     e.preventDefault();
+    setError(false);
+    setLoading(true);
 
     try {
       auth
@@ -20,10 +26,13 @@ const SignUp = () => {
             displayName,
           });
           console.log(userAuth);
-          window.location.reload();
+          //window.location.reload();
+          navigate("/");
         });
     } catch (error) {
       console.log(error.message);
+      setError(true);
+      setLoading(false);
     }
   };
 
@@ -51,6 +60,8 @@ const SignUp = () => {
             ref={registerPassword}
           />
           <input type="submit" value="Sign Up" />
+          <span>{error && "An error has occured. Please try again."}</span>
+          <span>{loading && "Please wait..."}</span>
         </form>
       </div>
     </div>
