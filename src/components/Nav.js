@@ -39,7 +39,8 @@ const Nav = () => {
   //close profile popup if click outside
   useEffect(() => {
     const closeProfile = (e) => {
-      if (!profileRef.current.contains(e.target)) setIsProfileActive(false);
+      if (user && !profileRef.current.contains(e.target))
+        setIsProfileActive(false);
     };
     document.body.addEventListener("click", closeProfile);
     return () => document.body.removeEventListener("click", closeProfile);

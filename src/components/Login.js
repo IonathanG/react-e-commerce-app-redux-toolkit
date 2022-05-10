@@ -35,11 +35,18 @@ const Login = () => {
     <div className="login-container">
       <div className="login">
         <h3>Login Here</h3>
-        <form onSubmit={(e) => handleLogin(e)}>
-          <input type="email" placeholder="Email" required ref={loginEmail} />
+        <form autoComplete="on" onSubmit={(e) => handleLogin(e)}>
+          <input
+            type="email"
+            placeholder="Email"
+            autoComplete="on"
+            required
+            ref={loginEmail}
+          />
           <input
             type="password"
             placeholder="Password"
+            autoComplete="on"
             required
             ref={loginPassword}
           />

@@ -40,22 +40,25 @@ const SignUp = () => {
     <div className="signup-container">
       <div className="signup">
         <h3>Sign Up</h3>
-        <form onSubmit={(e) => handleRegister(e)}>
+        <form autoComplete="on" onSubmit={(e) => handleRegister(e)}>
           <input
             type="text"
             placeholder="Name"
+            autoComplete="on"
             onChange={(e) => setDisplayName(e.target.value)}
             required
           />
           <input
             type="email"
             placeholder="Email"
+            autoComplete="on"
             required
             ref={registerEmail}
           />
           <input
             type="password"
             placeholder="Password"
+            autoComplete="on"
             required
             ref={registerPassword}
           />
