@@ -25,7 +25,7 @@ const SignUp = () => {
           await userAuth.user.updateProfile({
             displayName,
           });
-          console.log(userAuth);
+          //console.log(userAuth);
           //window.location.reload();
           navigate("/");
         });
