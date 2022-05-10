@@ -44,7 +44,7 @@ const Nav = () => {
     };
     document.body.addEventListener("click", closeProfile);
     return () => document.body.removeEventListener("click", closeProfile);
-  }, []);
+  }, [user]);
 
   //disable scrolling on the body when menu is open
   useEffect(() => {
