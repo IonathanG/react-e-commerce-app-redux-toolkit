@@ -28,7 +28,6 @@ const Login = () => {
       setError(true);
       setLoading(false);
     }
-    //console.log(loginEmail.current.value, loginPassword.current.value);
   };
 
   return (
