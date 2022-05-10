@@ -21,7 +21,7 @@ const Login = () => {
         loginEmail.current.value,
         loginPassword.current.value
       );
-      //console.log(user);
+      console.log(user);
       navigate("/");
     } catch (error) {
       console.log(error.message);
