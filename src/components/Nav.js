@@ -108,7 +108,7 @@ const Nav = () => {
                 className={(nav) => (nav.isActive ? "nav-active" : "")}
                 onClick={() => handleToggle()}
               >
-                <li>E-Contact</li>
+                <li>Contact</li>
               </NavLink>
             </ul>
           </div>
