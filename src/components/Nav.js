@@ -45,6 +45,13 @@ const Nav = () => {
     return () => document.body.removeEventListener("click", closeProfile);
   }, []);
 
+  //disable scrolling on the body when menu is open
+  useEffect(() => {
+    !isActive
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "visible");
+  }, [isActive]);
+
   return (
     <>
       <div className="navigation">
