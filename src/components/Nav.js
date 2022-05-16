@@ -1,16 +1,17 @@
 import React, { useContext, useEffect, useRef, useState } from "react";
 import { NavLink } from "react-router-dom";
 import UserContext from "../context/UserContext";
-import CartContext from "../context/CartContext";
 import CartPopUp from "./CartPopUp";
 import ProfilePopUp from "./ProfilePopUp";
+import { useSelector } from "react-redux";
 
 const Nav = () => {
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
   const { user } = useContext(UserContext);
-  const { totalQuantity } = useContext(CartContext);
 
   const [isActive, setActive] = useState(true);
   const [isProfileActive, setIsProfileActive] = useState(false);
+
   const btnRef = useRef();
   const menuRef = useRef();
   const subMenuRef = useRef();
@@ -159,4 +160,3 @@ const Nav = () => {
 };
 
 export default Nav;
-<h2>Nav</h2>;

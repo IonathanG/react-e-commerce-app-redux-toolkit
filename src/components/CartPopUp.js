@@ -1,9 +1,12 @@
-import React, { useContext } from "react";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import CartContext from "../context/CartContext";
+import { removeItem } from "../feature/cartSlice";
 
 const CartPopUp = () => {
-  const { listItems, removeItem } = useContext(CartContext);
+  const dispatch = useDispatch();
+  const listItems = useSelector((state) => state.cart.listItems);
+
   const navigate = useNavigate();
 
   return (
@@ -32,7 +35,7 @@ const CartPopUp = () => {
                 className="item__container--delete"
                 src="/images/icon-delete.svg"
                 alt=""
-                onClick={() => removeItem(item.name)}
+                onClick={() => dispatch(removeItem(item.name))}
               />
             </div>
           ))}

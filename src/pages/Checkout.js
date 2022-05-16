@@ -1,21 +1,28 @@
 import React, { useContext, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
-import CartContext from "../context/CartContext";
 import UserContext from "../context/UserContext";
+import {
+  addQuantity,
+  removeQuantity,
+  removeItem,
+  deleteCart,
+} from "../feature/cartSlice";
 
 const Checkout = () => {
-  const {
-    listItems,
-    totalQuantity,
-    addQuantity,
-    removeQuantity,
-    removeItem,
-    deleteCart,
-  } = useContext(CartContext);
   const { user } = useContext(UserContext);
+
+  const dispatch = useDispatch();
+  const totalQuantity = useSelector((state) => state.cart.totalQuantity);
+  const listItems = useSelector((state) => state.cart.listItems);
 
   const [totalPrice, setTotalPrice] = useState(0);
   const [isCheckedOut, setIsCheckedOut] = useState(false);
+
+  const check_RemoveQuantity = (item) => {
+    if (item.quantity > 1) dispatch(removeQuantity(item.name));
+    else dispatch(removeItem(item.name));
+  };
 
   //format number in currency style
   let formatter = new Intl.NumberFormat("en-US", {
@@ -50,13 +57,13 @@ const Checkout = () => {
                 <div className="item-price">{formatter.format(item.price)}</div>
                 <div className="item-quantity">
                   <img
-                    onClick={() => removeQuantity(item.name)}
+                    onClick={() => check_RemoveQuantity(item)}
                     src="/images/icon-minus.svg"
                     alt=""
                   />
                   <p>{item.quantity}</p>
                   <img
-                    onClick={() => addQuantity(item.name)}
+                    onClick={() => dispatch(addQuantity(item.name))}
                     src="/images/icon-plus.svg"
                     alt=""
                   />
@@ -71,11 +78,11 @@ const Checkout = () => {
                 className="item__delete"
                 src="/images/icon-delete.svg"
                 alt=""
-                onClick={() => removeItem(item.name)}
+                onClick={() => dispatch(removeItem(item.name))}
               />
               <div
                 className="item__delete__small"
-                onClick={() => removeItem(item.name)}
+                onClick={() => dispatch(removeItem(item.name))}
               >
                 <img
                   src="/images/icon-close.svg"
@@ -95,7 +102,7 @@ const Checkout = () => {
                 className="btn-finalCheckout"
                 onClick={() => {
                   setIsCheckedOut(true);
-                  deleteCart();
+                  dispatch(deleteCart());
                 }}
               >
                 Proceed to checkout

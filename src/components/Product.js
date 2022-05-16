@@ -1,7 +1,8 @@
-import React, { useState, useContext } from "react";
-import CartContext from "../context/CartContext";
+import React, { useState } from "react";
 import ProductPopUp from "./ProductPopUp";
 import Product_Data from "../data.json";
+import { useDispatch } from "react-redux";
+import { addItem } from "../feature/cartSlice";
 
 const Product = () => {
   const {
@@ -16,7 +17,8 @@ const Product = () => {
   const [itemQuantity, setItemQuantity] = useState(0);
   const [imageIndex, setImageIndex] = useState(0);
   const [productPopup, setProductPopup] = useState(false);
-  const { addItem } = useContext(CartContext);
+
+  const dispatch = useDispatch();
 
   let formatter = new Intl.NumberFormat("en-US", {
     style: "currency",
@@ -123,7 +125,15 @@ const Product = () => {
           </div>
           <button
             className="shop__item--add"
-            onClick={() => addItem(product_name, itemQuantity, product_price)}
+            onClick={() =>
+              dispatch(
+                addItem({
+                  name: product_name,
+                  quantity: itemQuantity,
+                  price: product_price,
+                })
+              )
+            }
           >
             <img className="icon-cart" src="/images/icon-cart.svg" alt="" />
             <p>Add to cart</p>
