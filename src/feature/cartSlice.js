@@ -6,8 +6,8 @@ const storedData = window.localStorage.state
   : {};
 
 const initialState = {
-  listItems: storedData ? storedData.cart.listItems : [],
-  totalQuantity: storedData ? storedData.cart.totalQuantity : 0,
+  listItems: storedData !== undefined ? storedData.cart.listItems : [],
+  totalQuantity: storedData !== undefined ? storedData.cart.totalQuantity : 0,
 };
 
 export const cartSlice = createSlice({
