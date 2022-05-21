@@ -1,17 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 //check for local storage cart items
-// const storedData = window.localStorage.state
-//   ? JSON.parse(localStorage.getItem("state"))
-//   : {};
+const storedData = window.localStorage.state
+  ? JSON.parse(localStorage.getItem("state"))
+  : {};
 
-// const initialState = {
-//   listItems: storedData.cart.listItems,
-//   totalQuantity: storedData.cart.totalQuantity,
-// };
 const initialState = {
-  listItems: [],
-  totalQuantity: 0,
+  listItems: storedData ? storedData.cart.listItems : [],
+  totalQuantity: storedData ? storedData.cart.totalQuantity : 0,
 };
 
 export const cartSlice = createSlice({
