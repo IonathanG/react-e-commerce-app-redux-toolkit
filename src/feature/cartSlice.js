@@ -32,6 +32,8 @@ export const cartSlice = createSlice({
             name: payload.name,
             quantity: payload.quantity,
             price: payload.price,
+            id: payload.id,
+            img: payload.img,
           });
         }
       }

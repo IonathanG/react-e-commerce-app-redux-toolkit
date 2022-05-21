@@ -4,7 +4,7 @@ import Product_Data from "../data.json";
 import { useDispatch } from "react-redux";
 import { addItem } from "../feature/cartSlice";
 
-const Product = () => {
+const Product = ({ id }) => {
   const {
     name: product_name,
     price: product_price,
@@ -12,7 +12,8 @@ const Product = () => {
     images: product_images,
     description: product_description,
     discount: product_discount,
-  } = Product_Data.products[0];
+    id: product_id,
+  } = Product_Data.products[id];
 
   const [itemQuantity, setItemQuantity] = useState(0);
   const [imageIndex, setImageIndex] = useState(0);
@@ -131,6 +132,8 @@ const Product = () => {
                   name: product_name,
                   quantity: itemQuantity,
                   price: product_price,
+                  id: product_id,
+                  img: product_images[0].full,
                 })
               )
             }

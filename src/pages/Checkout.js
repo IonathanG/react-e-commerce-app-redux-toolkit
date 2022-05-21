@@ -32,8 +32,11 @@ const Checkout = () => {
 
   useEffect(() => {
     if (listItems.length > 0) {
+      setTotalPrice(0);
       for (let i = 0; i < listItems.length; i++) {
-        setTotalPrice(listItems[i].price * listItems[i].quantity);
+        setTotalPrice(
+          (prevState) => prevState + listItems[i].price * listItems[i].quantity
+        );
       }
     }
   }, [totalQuantity, listItems]);
@@ -49,8 +52,8 @@ const Checkout = () => {
             <div className="checkout__list__item" key={item.name}>
               <img
                 className="checkout__list__item--img"
-                src="/images/image-product-1-thumbnail.jpg"
-                alt=""
+                src={item.img}
+                alt="picture_of_sneaker"
               />
               <div className="checkout__list__item--details">
                 <div className="item-name">{item.name}</div>

@@ -7,6 +7,7 @@ import Women from "./pages/Women";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Checkout from "./pages/Checkout";
+import ItemDetail from "./pages/ItemDetail";
 import Nav from "./components/Nav";
 import ConnectModal from "./pages/ConnectModal";
 import { UserProvider } from "./context/UserContext";
@@ -27,6 +28,7 @@ function App() {
               <Route path="/contact" element={<Contact />} />
               <Route path="/checkout" element={<Checkout />} />
               <Route path="/connect" element={<ConnectModal />} />
+              <Route path="/item/:id" element={<ItemDetail />} />
               <Route path="*" element={<Home />} />
             </Routes>
           </div>

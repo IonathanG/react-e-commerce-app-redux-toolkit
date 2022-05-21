@@ -13,17 +13,15 @@ const CartPopUp = () => {
     <div className="cart__popup">
       <h3>Cart</h3>
       {listItems.length === 0 && (
-        <div className="cart__popup--list cart-empty">Your cart is empty.</div>
+        <div className="cart__popup--list cart-empty">
+          <p>Your cart is empty.</p>
+        </div>
       )}
       {listItems.length > 0 && (
         <div className="cart__popup--list cart-full">
           {listItems.map((item) => (
             <div className="item__container" key={item.name}>
-              <img
-                className="item__container--image"
-                src="/images/image-product-1-thumbnail.jpg"
-                alt=""
-              />
+              <img className="item__container--image" src={item.img} alt="" />
               <div className="item__container--details">
                 <p>{item.name}</p>
                 <p>

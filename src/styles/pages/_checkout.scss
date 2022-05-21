@@ -3,6 +3,7 @@
   position: relative;
   width: 80%;
   margin: 0 auto;
+  padding-bottom: 20px;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -17,6 +18,8 @@
   &__list {
     transition: 0.3s ease;
     &__item {
+      height: 150px;
+      margin-bottom: 2rem;
       position: relative;
       display: flex;
       flex-direction: row;
@@ -31,7 +34,8 @@
 
       &--img {
         border-radius: 5px;
-        max-width: 100%;
+        max-width: 160px;
+        max-height: 150px;
         transition: 0.3s ease;
 
         @media (max-width: 700px) {

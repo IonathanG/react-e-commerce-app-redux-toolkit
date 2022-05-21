@@ -2,28 +2,185 @@
   "products": [
     {
       "name": "Fall Limited Edition Sneakers",
+      "id": 0,
       "price": 125,
       "discount": "50%",
       "original_price": 250,
+      "theme": "orange",
       "images": [
         {
-          "full": "/images/image-product-1.jpg",
-          "miniature": "/images/image-product-1-thumbnail.jpg",
+          "full": "/images/products/orange/orange-product-1.jpg",
+          "miniature": "/images/products/orange/orange-product-1-thumbnail.jpg",
           "id": 0
         },
         {
-          "full": "/images/image-product-2.jpg",
-          "miniature": "/images/image-product-2-thumbnail.jpg",
+          "full": "/images/products/orange/orange-product-2.jpg",
+          "miniature": "/images/products/orange/orange-product-2-thumbnail.jpg",
           "id": 1
         },
         {
-          "full": "/images/image-product-3.jpg",
-          "miniature": "/images/image-product-3-thumbnail.jpg",
+          "full": "/images/products/orange/orange-product-3.jpg",
+          "miniature": "/images/products/orange/orange-product-3-thumbnail.jpg",
           "id": 2
         },
         {
-          "full": "/images/image-product-4.jpg",
-          "miniature": "/images/image-product-4-thumbnail.jpg",
+          "full": "/images/products/orange/orange-product-4.jpg",
+          "miniature": "/images/products/orange/orange-product-4-thumbnail.jpg",
+          "id": 3
+        }
+      ],
+      "description": "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer."
+    },
+    {
+      "name": "Nike Fall Edition Sneakers",
+      "id": 1,
+      "price": 125,
+      "discount": "50%",
+      "original_price": 250,
+      "theme": "brown",
+      "images": [
+        {
+          "full": "/images/products/brown/brown-product-1.jpg",
+          "miniature": "/images/products/brown/brown-product-1-thumbnail.jpg",
+          "id": 0
+        },
+        {
+          "full": "/images/products/brown/brown-product-2.jpg",
+          "miniature": "/images/products/brown/brown-product-2-thumbnail.jpg",
+          "id": 1
+        },
+        {
+          "full": "/images/products/brown/brown-product-3.jpg",
+          "miniature": "/images/products/brown/brown-product-3-thumbnail.jpg",
+          "id": 2
+        },
+        {
+          "full": "/images/products/brown/brown-product-4.jpg",
+          "miniature": "/images/products/brown/brown-product-4-thumbnail.jpg",
+          "id": 3
+        }
+      ],
+      "description": "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer."
+    },
+    {
+      "name": "Converse Vulcan Edition Sneakers",
+      "id": 2,
+      "price": 125,
+      "discount": "50%",
+      "original_price": 250,
+      "theme": "grey",
+      "images": [
+        {
+          "full": "/images/products/grey/grey-product-1.jpg",
+          "miniature": "/images/products/grey/grey-product-1-thumbnail.jpg",
+          "id": 0
+        },
+        {
+          "full": "/images/products/grey/grey-product-2.jpg",
+          "miniature": "/images/products/grey/grey-product-2-thumbnail.jpg",
+          "id": 1
+        },
+        {
+          "full": "/images/products/grey/grey-product-3.jpg",
+          "miniature": "/images/products/grey/grey-product-3-thumbnail.jpg",
+          "id": 2
+        },
+        {
+          "full": "/images/products/grey/grey-product-4.jpg",
+          "miniature": "/images/products/grey/grey-product-4-thumbnail.jpg",
+          "id": 3
+        }
+      ],
+      "description": "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer."
+    },
+    {
+      "name": "Red Converse Edition Sneakers",
+      "id": 3,
+      "price": 125,
+      "discount": "50%",
+      "original_price": 250,
+      "theme": "red",
+      "images": [
+        {
+          "full": "/images/products/red/red-product-1.jpeg",
+          "miniature": "/images/products/red/red-product-1-thumbnail.jpg",
+          "id": 0
+        },
+        {
+          "full": "/images/products/red/red-product-2.jpeg",
+          "miniature": "/images/products/red/red-product-2-thumbnail.jpg",
+          "id": 1
+        },
+        {
+          "full": "/images/products/red/red-product-3.jpeg",
+          "miniature": "/images/products/red/red-product-3-thumbnail.jpg",
+          "id": 2
+        },
+        {
+          "full": "/images/products/red/red-product-4.jpeg",
+          "miniature": "/images/products/red/red-product-4-thumbnail.jpg",
+          "id": 3
+        }
+      ],
+      "description": "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer."
+    },
+    {
+      "name": "White Spring Edition Sneakers",
+      "id": 4,
+      "price": 125,
+      "discount": "50%",
+      "original_price": 250,
+      "theme": "white",
+      "images": [
+        {
+          "full": "/images/products/white/white-product-1.jpeg",
+          "miniature": "/images/products/white/white-product-1-thumbnail.jpeg",
+          "id": 0
+        },
+        {
+          "full": "/images/products/white/white-product-2.jpeg",
+          "miniature": "/images/products/white/white-product-2-thumbnail.jpeg",
+          "id": 1
+        },
+        {
+          "full": "/images/products/white/white-product-3.jpeg",
+          "miniature": "/images/products/white/white-product-3-thumbnail.jpeg",
+          "id": 2
+        },
+        {
+          "full": "/images/products/white/white-product-4.jpeg",
+          "miniature": "/images/products/white/white-product-4-thumbnail.jpeg",
+          "id": 3
+        }
+      ],
+      "description": "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer."
+    },
+    {
+      "name": "Nike Tennis Edition Sneakers",
+      "id": 5,
+      "price": 125,
+      "discount": "50%",
+      "original_price": 250,
+      "theme": "white-orange",
+      "images": [
+        {
+          "full": "/images/products/white-orange/white-orange-product-1.jpg",
+          "miniature": "/images/products/white-orange/white-orange-product-1-thumbnail.jpg",
+          "id": 0
+        },
+        {
+          "full": "/images/products/white-orange/white-orange-product-2.jpg",
+          "miniature": "/images/products/white-orange/white-orange-product-2-thumbnail.jpg",
+          "id": 1
+        },
+        {
+          "full": "/images/products/white-orange/white-orange-product-3.jpg",
+          "miniature": "/images/products/white-orange/white-orange-product-3-thumbnail.jpg",
+          "id": 2
+        },
+        {
+          "full": "/images/products/white-orange/white-orange-product-4.jpg",
+          "miniature": "/images/products/white-orange/white-orange-product-4-thumbnail.jpg",
           "id": 3
         }
       ],
