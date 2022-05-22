@@ -1,0 +1,127 @@
+.home-content {
+  //background-color: rgba(13, 78, 135, 0.399);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  gap: 0px;
+  min-height: 400px;
+  position: relative;
+
+  @media (max-width: 1100px) {
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 50px;
+    justify-content: flex-start;
+  }
+
+  @media (max-width: $phone) {
+    text-align: center;
+    justify-content: center;
+  }
+
+  .introduction {
+    //background-color: rgba(245, 245, 220, 0.436);
+    max-width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    letter-spacing: 0.5px;
+
+    @media (max-width: 1100px) {
+      max-width: 80%;
+    }
+
+    header {
+      h2 {
+        margin-bottom: 20px;
+        color: $mainOrange;
+        font-weight: 500;
+        font-size: 34px;
+      }
+
+      h3 {
+        font-weight: 300;
+        font-size: 25px;
+      }
+    }
+
+    p {
+      line-height: 25px;
+      opacity: 0.85;
+    }
+
+    button {
+      z-index: 10;
+      margin-top: 30px;
+      @include generic-button(180px, 50px);
+      border-radius: 28px;
+      background-color: #183f48;
+      position: relative;
+
+      span {
+        display: inline-block;
+        transition: 0.45s ease-out;
+        opacity: 0;
+        position: absolute;
+      }
+
+      &:hover {
+        opacity: 0.65;
+        transform: scale(1.02);
+
+        span {
+          opacity: 1;
+          transform: translateX(10px) scale(1.05);
+        }
+      }
+    }
+  }
+
+  .shoe-carousel {
+    //background-color: #b8c6db5c;
+    background-color: #ffffff;
+    background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
+
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    opacity: 0.9;
+
+    @media (max-width: 1100px) {
+      position: absolute;
+      opacity: 0.1;
+      width: 50%;
+      height: 50%;
+      left: 10%;
+    }
+
+    @media (max-width: $phone) {
+      top: 60%;
+    }
+
+    img {
+      max-width: 400px;
+      height: auto;
+      transition: 1s ease;
+
+      &:hover {
+        transform: rotate(360deg);
+      }
+
+      @media (max-width: 1100px) {
+        max-width: 800px;
+
+        &:hover {
+          transform: rotate(0);
+        }
+      }
+
+      @media (max-width: $phone) {
+        max-width: 500px;
+      }
+    }
+  }
+}

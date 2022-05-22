@@ -9,10 +9,6 @@ const initialState = {
   listItems: storedData === undefined ? [] : storedData.cart.listItems,
   totalQuantity: storedData === undefined ? 0 : storedData.cart.totalQuantity,
 };
-// const initialState = {
-//   listItems: [],
-//   totalQuantity: 0,
-// };
 
 export const cartSlice = createSlice({
   name: "cart",
