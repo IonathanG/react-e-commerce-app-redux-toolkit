@@ -49,7 +49,7 @@ const Nav = () => {
 
   //disable scrolling on the body when menu is open
   useEffect(() => {
-    !isActive
+    isActive === false
       ? (document.body.style.overflow = "hidden")
       : (document.body.style.overflow = "visible");
   }, [isActive]);
@@ -79,35 +79,35 @@ const Nav = () => {
               <NavLink
                 to="/collections"
                 className={(nav) => (nav.isActive ? "nav-active" : "")}
-                onClick={() => handleToggle()}
+                onClick={() => (!isActive ? handleToggle() : null)}
               >
                 <li>Collections</li>
               </NavLink>
               <NavLink
                 to="/men"
                 className={(nav) => (nav.isActive ? "nav-active" : "")}
-                onClick={() => handleToggle()}
+                onClick={() => (!isActive ? handleToggle() : null)}
               >
                 <li>Men</li>
               </NavLink>
               <NavLink
                 to="/women"
                 className={(nav) => (nav.isActive ? "nav-active" : "")}
-                onClick={() => handleToggle()}
+                onClick={() => (!isActive ? handleToggle() : null)}
               >
                 <li>Women</li>
               </NavLink>
               <NavLink
                 to="/about"
                 className={(nav) => (nav.isActive ? "nav-active" : "")}
-                onClick={() => handleToggle()}
+                onClick={() => (!isActive ? handleToggle() : null)}
               >
                 <li>About</li>
               </NavLink>
               <NavLink
                 to="/contact"
                 className={(nav) => (nav.isActive ? "nav-active" : "")}
-                onClick={() => handleToggle()}
+                onClick={() => (!isActive ? handleToggle() : null)}
               >
                 <li>Contact</li>
               </NavLink>
