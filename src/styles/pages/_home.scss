@@ -100,6 +100,7 @@
 
     @media (max-width: $phone) {
       top: 60%;
+      //overflow: hidden;
     }
 
     img {
@@ -120,7 +121,8 @@
       }
 
       @media (max-width: $phone) {
-        max-width: 500px;
+        max-width: 75vw;
+        // overflow-x: hidden;
       }
     }
   }
