@@ -49,13 +49,9 @@ const Nav = () => {
 
   //disable scrolling on the body when menu is open
   useEffect(() => {
-    if (isActive === false) {
-      document.body.style.overflow = "hidden";
-      document.body.style.height = "100vh";
-    } else {
-      document.body.style.overflow = "visible";
-      document.body.style.height = "100%";
-    }
+    isActive === false
+      ? (document.body.style.overflow = "hidden")
+      : (document.body.style.overflow = "visible");
   }, [isActive]);
 
   return (
